@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     if (!fileExists('/usr/local/go/bin/go')) {
-                        sh 'wget https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz'
+                        sh 'curl -O https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz'
                         sh 'tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz'
                     }
                 }
